@@ -21,15 +21,18 @@
       <div class="w-full md:w-2/3 bg-white flex flex-col space-y-2 p-3">
         <div class="flex justify-between item-center">
           <p class="text-gray-500 font-medium hidden md:block">Vacations</p>
-          <div class="bg-green-500 px-3 py-1 rounded-full text-xs font-medium text-white hidden md:block">Completed</div>
+          <div class="bg-teal-500 px-3 py-1 rounded-full text-base font-semibold  text-white hidden md:block">Completed</div>
         </div>
         <h3 class="font-black text-gray-800 md:text-3xl text-xl">Nusa Penida Full Day Trip</h3>
+        <h2 class="font-black text-teal-700 md:text-xl text-base">Wayan Harry Samjoe</h2>
         <div class="flex items-center">
           <p class="text-gray-600 font-bold text-sm">25-12-2022</p>
         </div>
         <p class="md:text-lg text-gray-500 text-base">Driver : Bayu Danu</p>
         <p class="md:text-lg text-gray-500 text-base">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis eos aspernatur est, officia in ipsa. Voluptatibus aliquam rem alias quasi fuga maiores minus beatae, repellendus nostrum quod tempore, voluptas eos!</p>
-        <p class="text-xl font-black text-gray-800">Rp. 750.000</p>
+        <p class="text-xl font-black text-gray-800"><span>IDR</span> 750.000</p>
+        <a href="http://" class="text-teal-700 hover:text-teal-800"><p class="text-base font-black text-right">Give Review</p></a>
+        
       </div>
     </div>
     <div class="w-full relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 mx-auto border border-white">
@@ -67,5 +70,5 @@
       </div>
     </div>
   </div>
-  <div class="bg-green-900">TES GREEN</div>
+  
 </x-home-layout>

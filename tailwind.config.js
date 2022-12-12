@@ -12,12 +12,14 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+                sacramento :['Sacramento'],
             },
             colors: {
 				primary: "#10567A",
 				secondary: "#38A4DC",
 				textPrimary: "#333333",
-			}
+			},
+        
         },
     },
 
