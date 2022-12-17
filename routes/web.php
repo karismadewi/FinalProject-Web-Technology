@@ -26,6 +26,9 @@ Route::get('/dashboard', function () {
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/booking', [HomeController::class, 'booking'])->name('booking');
 Route::get('/history', [HomeController::class, 'history'])->name('history');
+// to be deleted after implementation
+Route::get('/profileui', [HomeController::class, 'profile'])->name('profileui'); 
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

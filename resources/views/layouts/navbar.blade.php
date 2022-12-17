@@ -1,7 +1,7 @@
 <!-- Navbar -->
 <nav class="px-2 sm:px-4 py-2.5 bg-slate-50 border-slate-500">
     <div class="container flex flex-wrap items-center justify-between mx-auto">
-        <a href="https://flowbite.com/" class="flex items-center">
+        <a href="frontpage/home" class="flex items-center">
             <!-- <img src="https://flowbite.com/docs/images/logo.svg" class="h-6 mr-3 sm:h-9" alt="Flowbite Logo" /> -->
             <span class="font-sacramento self-center text-4xl font-semibold whitespace-nowrap text-teal-700">Guidy</span>
         </a>
