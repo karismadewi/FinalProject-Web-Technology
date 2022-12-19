@@ -1,9 +1,11 @@
 <!-- Navbar -->
-<nav class="px-2 sm:px-4 py-2.5 bg-slate-50 border-slate-500">
+
+<nav class="px-2 sm:px-4 py-2.5 bg-white border-b border-slate-200">
     <div class="container flex flex-wrap items-center justify-between mx-auto">
         <a href="frontpage/home" class="flex items-center">
             <!-- <img src="https://flowbite.com/docs/images/logo.svg" class="h-6 mr-3 sm:h-9" alt="Flowbite Logo" /> -->
-            <span class="font-sacramento self-center text-4xl font-semibold whitespace-nowrap text-teal-700">Guidy</span>
+            <span class="font-sacramento self-center text-4xl font-medium whitespace-nowrap text-teal-500">Guidy</span> 
+            <!-- <span class="font-mon text-base text-slate-500">~find you trully best guide</span> -->
         </a>
         <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2" aria-controls="navbar-default" aria-expanded="false">
             <span class="sr-only">Open main menu</span>
@@ -30,4 +32,5 @@
         </div>
     </div>
 </nav>
+
 <!-- End Navbar -->
