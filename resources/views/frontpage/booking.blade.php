@@ -52,7 +52,7 @@
                         <div class="mt-4 lg:row-span-3 lg:mt-0">
                             <div>
                                 <p class="text-3xl font-bold tracking-tight text-teal-700 mb-2">Wayan Givano</p>
-                                
+
                                 <p><i class="fa-solid fa-globe"></i><span class="font-bold text-base"> Available
                                         Language
                                         <ul class="font-semibold text-sm list-disc space-y-2 pl-4 ml-4 mt-3">
@@ -66,24 +66,24 @@
                             <!-- Reviews -->
                             <div class="mt-6">
                                 <!-- <div class="flex items-center"> -->
-                                    <div>
-                                        <i class="fa-solid fa-star text-yellow-500"></i>
-                                        <i class="fa-solid fa-star text-yellow-500"></i>
-                                        <i class="fa-solid fa-star text-yellow-500"></i>
-                                        <i class="fa-solid fa-star text-yellow-500"></i>
-                                        <i class="fa-regular fa-star text-yellow-500"></i>
+                                <div>
+                                    <i class="fa-solid fa-star text-yellow-500"></i>
+                                    <i class="fa-solid fa-star text-yellow-500"></i>
+                                    <i class="fa-solid fa-star text-yellow-500"></i>
+                                    <i class="fa-solid fa-star text-yellow-500"></i>
+                                    <i class="fa-regular fa-star text-yellow-500"></i>
 
 
-                                        <!-- Heroicon name: mini/star -->
-                                    </div>
-                                    <!-- <p class="font-light font-sm">4 out of 5 stars</p> -->
-                                    <div>
-                                        <p class="text-slate-600 font-semibold my-4"><i
-                                                class="fa-solid fa-tag text-yellow-500"></i>Sold out 3k++</p><br>
-                                        <p class="text-right text-base font-bold text-bold"><a href="#"
-                                                class="ml-3 text-sm font-medium text-teal-600 hover:text-teal-500">2.1k
-                                                reviews</a></p>
-                                    </div>
+                                    <!-- Heroicon name: mini/star -->
+                                </div>
+                                <!-- <p class="font-light font-sm">4 out of 5 stars</p> -->
+                                <div>
+                                    <p class="text-slate-600 font-semibold my-4"><i
+                                            class="fa-solid fa-tag text-yellow-500"></i>Sold out 3k++</p><br>
+                                    <p class="text-right text-base font-bold text-bold"><a href="#"
+                                            class="ml-3 text-sm font-medium text-teal-600 hover:text-teal-500">2.1k
+                                            reviews</a></p>
+                                </div>
                                 <!-- </div> -->
                             </div>
 
@@ -193,9 +193,40 @@
         <div class="w-full md:mt-16 md:w-3/12 sm:w-3/12">
             <div class="bg-white">
                 <div class="border border-gray-200 p-4 rounded bg-white">
-                    <h4 class="text-gray-800 text-lg font-medium uppercase">order summary</h4>
+                    <h4 class="text-gray-800 text-lg font-medium uppercase">Nusa Penida Full Day Trip</h4>
                     <div class="mt-4">
                         <div class="flow-root">
+                            <div date-rangepicker class="flex items-center">
+                                <div class="relative">
+                                    <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                                        <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400"
+                                            fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd"
+                                                d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+                                    <input name="start" type="text"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="Select date start">
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                             <ul role="list" class="py-6 divide-y divide-gray-200">
                                 <li class="flex">
                                     <div class="ml-4 flex flex-1 flex-col">
@@ -225,7 +256,7 @@
                     <div class="border-t border-gray-200 py-6 px-4 sm:px-4">
                         <div class="flex justify-between text-base font-medium text-gray-900">
                             <p>Total</p>
-                            <p class="font-extrabold text-lg"><span>IDR.</span>  750.000</p>
+                            <p class="font-extrabold text-lg"><span>IDR.</span> 750.000</p>
                         </div>
 
                         <div class="mt-6">
