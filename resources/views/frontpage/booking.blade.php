@@ -193,63 +193,19 @@
         <div class="w-full md:mt-16 md:w-3/12 sm:w-3/12">
             <div class="bg-white">
                 <div class="border border-gray-200 p-4 rounded bg-white">
-                    <h4 class="text-gray-800 text-lg font-medium uppercase">Nusa Penida Full Day Trip</h4>
+                    <h4 class="text-gray-800 text-lg font-medium uppercase mb-10">Nusa Penida Full Day Trip</h4>
                     <div class="mt-4">
                         <div class="flow-root">
-                            <div date-rangepicker class="flex items-center">
-                                <div class="relative">
-                                    <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                                        <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400"
-                                            fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd"
-                                                d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                                                clip-rule="evenodd"></path>
-                                        </svg>
-                                    </div>
-                                    <input name="start" type="text"
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                        placeholder="Select date start">
-                                </div>
-                            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                            <ul role="list" class="py-6 divide-y divide-gray-200">
-                                <li class="flex">
-                                    <div class="ml-4 flex flex-1 flex-col">
-                                        <div class="justify-items-end">
-                                            <div class="flex flex-1 items-end justify-end text-sm">
-                                                <div class="flex">
-                                                    <button type="button"
-                                                        class="text-right font-medium text-teal-600 hover:text-teal-500 ">
-                                                        <p class="text-right">Remove</p>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                            <div class="flex justify-between text-base font-medium text-gray-900">
-                                                <h3>
-                                                    <a href="#">Nusa Penida Full Day Trip</a>
-                                                </h3>
-                                            </div>
-                                            <p class="font-bold">Rp. 750.000</p>
-                                            <p class="mt-1 text-sm text-gray-500">Bayu Danu</p>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
+                            <p class="font-mon font-medium text-sm text-teal-600">Pick the date :</p>
+                            <input type="date" class="bg-gray-50 border mt-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <p class="font-mon font-medium text-sm text-teal-600 mt-5">Pick the time :</p>
+                            <input type="time" class="bg-gray-50 border mt-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <p class="font-mon font-medium text-sm text-teal-600 mt-5">Adult :</p>
+                            <input type="number" class="bg-gray-50 border mt-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="amount">
+                            <p class="font-mon font-medium text-sm text-teal-600 mt-5">Child (0-10th) :</p>
+                            <input type="number" class="bg-gray-50 border mt-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="amount">
+                 
+                           
                         </div>
                     </div>
 
