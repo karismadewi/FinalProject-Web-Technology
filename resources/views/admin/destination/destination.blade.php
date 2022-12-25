@@ -25,7 +25,7 @@
       {{-- table --}}
       <div class="overflow-x-auto relative w-full">
         <h1 class="font-bold text-3xl my-10">List Destination of Guidy 2022</h1>
-        <button class="focus:outline-none text-white bg-teal-700 hover:bg-teal-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2"><a href="create">Add Data</a></button>
+        <button class="focus:outline-none text-white bg-teal-700 hover:bg-teal-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2"><a href="destinations/create">Add Data</a></button>
         <table class="w-full text-sm text-left text-gray-500">
           <thead class="text-xs text-gray-700 uppercase bg-gray-200">
             <tr>
@@ -36,22 +36,30 @@
                 Name
               </th>
               <th scope="col" class="py-3 px-6">
-                Price
+                Description
+              </th>
+              <th scope="col" class="py-3 px-6">
+                Tour Guide
               </th>
             </tr>
           </thead>
           <tbody>
+            @foreach ($destinations as $destination)
             <tr class="bg-white border-b">
               <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
-                1
+                {{ $destination->id }}
               </th>
               <td class="py-4 px-6">
-                Lorem ipsum dolor sit amet.
+                {{ $destination->dest_name }}
               </td>
               <td class="py-4 px-6">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, ullam.
+                {{ $destination->dest_description }}
+              </td>
+              <td class="py-4 px-6">
+                {{-- {{ $destination->tour_guide->tg_name }} --}}
               </td>
             </tr>
+            @endforeach
           </tbody>
         </table>
       </div>

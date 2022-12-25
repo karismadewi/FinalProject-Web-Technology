@@ -1,22 +1,23 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\TourGuide;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
 
-class AdminController extends Controller
+class TourGuideController extends Controller
 {
     public function index()
     {
-        $data = TourGuide::all();
-        return view('backpage.tour_guide')->with('data', $data);
+        $data = TourGuide::paginate(2);
+        return view('admin.tour_guide.tour_guide')->with('data', $data);
     }
     public function create()
     {
-        return view('backpage.create_tour_guide');
+        return view('admin.tour_guide.create_tour_guide');
     }
     public function store(Request $request)
     {
@@ -51,7 +52,7 @@ class AdminController extends Controller
         $image_file = $request->file('tg_image');
         $img_ext = $image_file->extension();
         $img_name = date('ymdhis') . "." . $img_ext;
-        $image_file->move(public_path('images'), $img_name);
+        $image_file->move(public_path('images/tour_guides'), $img_name);
 
         $data = [
             'tg_name' => $request->input('tg_name'),
@@ -62,7 +63,7 @@ class AdminController extends Controller
             'tg_image' => $img_name,
         ];
         TourGuide::create($data);
-        return redirect('tour_guide')->with('success', 'Data successfully added!');
+        return redirect('admin/tour_guide')->with('success', 'Data successfully added!');
         // TourGuide::create($validated);
         // $path = $request->file('tg_image')->store('tg_images');
         // TourGuide::create($request->except('_token'));
@@ -72,7 +73,7 @@ class AdminController extends Controller
     {
         $data = TourGuide::where('id', $id)->first();
         // dd($data);
-        return view('backpage.edit_tour_guide')->with('data', $data);
+        return view('admin.tour_guide.edit_tour_guide')->with('data', $data);
     }
     public function update(Request $request, $id)
     {
@@ -124,7 +125,7 @@ class AdminController extends Controller
         }
         // dd($data);
         TourGuide::where('id', $id)->update($data);
-        return redirect('tour_guide')->with('success', 'Data successfully updated!');
+        return redirect('admin/tour_guide')->with('success', 'Data successfully updated!');
     }
     public function destroy($id)
     {
@@ -132,11 +133,6 @@ class AdminController extends Controller
         File::delete(public_path('images' . '/' . $data->tg_image));
         TourGuide::where('id', $id)->delete();
         // dd($data);
-        return redirect('tour_guide')->with('success', 'Data successfully deleted!');
-    }
-
-    public function dest()
-    {
-        return view('backpage.destination');
+        return redirect('admin/tour_guide')->with('success', 'Data successfully deleted!');
     }
 }

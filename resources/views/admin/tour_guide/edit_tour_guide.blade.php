@@ -26,7 +26,7 @@
     <div class="container">
       <h1 class="font-bold text-3xl my-7">Edit Data Tour Guide</h1>
       <hr class="mb-5 h-px bg-gray-300 border-0">
-      <form action="{{ '/tour_guide/' . $data->id }}" method="POST" enctype="multipart/form-data">
+      <form action="{{ '/admin/tour_guide/' . $data->id }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="flex gap-10">

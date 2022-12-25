@@ -26,7 +26,7 @@
     <div class="container">
       <h1 class="font-bold text-3xl my-7">Add Data Tour Guide</h1>
       <hr class="mb-5 h-px bg-gray-300 border-0">
-      <form action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data">
+      <form action="{{ route('tour_guide.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="flex gap-10">
           <div>
