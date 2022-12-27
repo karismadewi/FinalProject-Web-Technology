@@ -15,9 +15,16 @@ class DestinationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $destinations = Destination::with('tour_guide')->get();
+        $keyword = $request->keyword;
+        //dd($keyword);
+        $destinations = Destination::with('tour_guide')
+                        ->where('dest_name', 'LIKE', '%' . $keyword . '%')
+                        ->orWhereHas('tour_guide', function($query) use($keyword) {
+                            $query->where('tg_name', 'LIKE', '%'.$keyword.'%');
+                        })
+                        ->paginate(1);
         // dd($destinations);
         return view('admin.destination.destination')->with('destinations', $destinations);
     }
@@ -29,9 +36,9 @@ class DestinationController extends Controller
      */
     public function create()
     {
-        $destinations = Destination::with('tour_guide')->get();
+        $tour_guides = TourGuide::all();
         // dd($destinations);
-        return view('admin.destination.create_destination')->with('destinations', $destinations);
+        return view('admin.destination.create_destination')->with('tour_guides', $tour_guides);
     }
 
     /**
@@ -42,16 +49,17 @@ class DestinationController extends Controller
      */
     public function store(Request $request)
     {
+        //dd($request->all());
         Session::flash('dest_name', $request->dest_name);
         Session::flash('dest_description', $request->dest_description);
         Session::flash('tguide_id', $request->tguide_id);
         $message = [
-            'dest_name.required' => 'The name must be filled!',
-            'dest_description.required' => 'The nickname must be filled!',
-            'tguide_id.required' => 'The about must be filled!',
+            'dest_name.required' => 'The destination name must be filled!',
+            'dest_description.required' => 'The description must be filled!',
+            'tguide_id.required' => 'The tour guide must be selected!',
             'dest_image.required' => 'The image must be filled!',
-            'tg_image.mimes' => 'The image must be in extension jpg, jpeg, png!',
-            'tg_image.image' => 'The file must be an image!',
+            'dest_image.mimes' => 'The image must be in extension jpg, jpeg, png!',
+            'dest_image.image' => 'The file must be an image!',
         ];
         $request->validate([
             'dest_name' => 'required|max:255',
@@ -68,12 +76,11 @@ class DestinationController extends Controller
         $data = [
             'dest_name' => $request->input('dest_name'),
             'dest_description' => $request->input('dest_description'),
-            'dest_image' => $request->input('dest_image'),
-            'tg_destination' => $request->input('tg_destination'),
-            'tg_price' => $request->input('tg_price'),
-            'tg_image' => $img_name,
+            'dest_image' => $img_name,
+            'tguide_id' => $request->tguide_id
         ];
-        TourGuide::create($data);
+        //dd($data);
+        Destination::create($data);
         return redirect('admin/destinations')->with('success', 'Data successfully added!');
         // TourGuide::create($validated);
         // $path = $request->file('tg_image')->store('tg_images');

@@ -10,9 +10,11 @@ use Illuminate\Support\Facades\Session;
 
 class TourGuideController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $data = TourGuide::paginate(2);
+        $keyword = $request->keyword;
+        $data = TourGuide::where('tg_name', 'LIKE', '%'.$keyword.'%')
+                ->paginate(2);
         return view('admin.tour_guide.tour_guide')->with('data', $data);
     }
     public function create()
