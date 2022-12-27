@@ -13,16 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('transactions', function (Blueprint $table) {
+        Schema::create('history', function (Blueprint $table) {
             $table->id();
-            $table->string('transaction_code', 11);
-            $table->date('transaction_date');
+            $table->string('status');
             $table->timestamps();
         });
-        Schema::table('transactions', function (Blueprint $table) {
-            $table->foreignId('tougui_id')->constrained('tour_guides');
-            $table->foreignId('destnat_id')->constrained('destinations');
+        Schema::table('history', function (Blueprint $table) {
+            $table->foreignId('tourgui_id')->constrained('tour_guides');
+            $table->foreignId('dstnation_id')->constrained('destinations');
             $table->foreignId('u_id')->constrained('users');
+            $table->foreignId('trans_id')->constrained('transactions');
         });
     }
 
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transactions');
+        Schema::dropIfExists('history');
     }
 };
