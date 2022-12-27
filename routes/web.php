@@ -26,6 +26,8 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+// to be deleted after implementation
+Route::get('/profileui', [HomeController::class, 'profile'])->name('profileui'); 
 Route::get('/booking', [HomeController::class, 'booking'])->name('booking')->middleware(['auth', 'verified', 'checkRole:admin,user']);
 Route::get('/history', [HomeController::class, 'history'])->name('history')->middleware(['auth', 'verified', 'checkRole:admin,user']);
 

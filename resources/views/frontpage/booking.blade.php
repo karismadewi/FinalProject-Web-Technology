@@ -40,29 +40,51 @@
                         <div class="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
                             <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Nusa Penida Full Day
                                 Trip</h1>
+                            <h2 class="text-lg font-bold tracking-tight text-teal-700 sm:text-2xl">IDR
+                                <span>750000</span></h2>
+
+                            <p class="text-slate-600 text-base font-bold my-1"><i
+                                    class="fa-solid fa-bookmark text-yellow-500"></i> Best Seller</p>
                         </div>
+
 
                         <!-- Options -->
                         <div class="mt-4 lg:row-span-3 lg:mt-0">
-                            <p class="text-3xl tracking-tight text-gray-900">Rp. 750.000</p>
+                            <div>
+                                <p class="text-3xl font-bold tracking-tight text-teal-700 mb-2">Wayan Givano</p>
 
+                                <p><i class="fa-solid fa-globe"></i><span class="font-bold text-base"> Available
+                                        Language
+                                        <ul class="font-semibold text-sm list-disc space-y-2 pl-4 ml-4 mt-3">
+                                            <li>Mandarin</li>
+                                            <li>Japanese</li>
+                                            <li>Indonesia</li>
+                                            <li>English</li>
+                                        </ul>
+                                        <!-- <p class="text-3xl tracking-tight text-gray-900">Rp. 750.000</p> -->
+                            </div>
                             <!-- Reviews -->
                             <div class="mt-6">
-                                <div class="flex items-center">
-                                    <div class="flex items-center">
-                                        <i class="fa-solid fa-star text-yellow-500"></i>
-                                        <i class="fa-solid fa-star text-yellow-500"></i>
-                                        <i class="fa-solid fa-star text-yellow-500"></i>
-                                        <i class="fa-solid fa-star text-yellow-500"></i>
-                                        <i class="fa-regular fa-star text-yellow-500"></i>
+                                <!-- <div class="flex items-center"> -->
+                                <div>
+                                    <i class="fa-solid fa-star text-yellow-500"></i>
+                                    <i class="fa-solid fa-star text-yellow-500"></i>
+                                    <i class="fa-solid fa-star text-yellow-500"></i>
+                                    <i class="fa-solid fa-star text-yellow-500"></i>
+                                    <i class="fa-regular fa-star text-yellow-500"></i>
 
-                                        <!-- Heroicon name: mini/star -->
-                                    </div>
-                                    <p class="sr-only">4 out of 5 stars</p>
-                                    <a href="#"
-                                        class="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">117
-                                        reviews</a>
+
+                                    <!-- Heroicon name: mini/star -->
                                 </div>
+                                <!-- <p class="font-light font-sm">4 out of 5 stars</p> -->
+                                <div>
+                                    <p class="text-slate-600 font-semibold my-4"><i
+                                            class="fa-solid fa-tag text-yellow-500"></i>Sold out 3k++</p><br>
+                                    <p class="text-right text-base font-bold text-bold"><a href="#"
+                                            class="ml-3 text-sm font-medium text-teal-600 hover:text-teal-500">2.1k
+                                            reviews</a></p>
+                                </div>
+                                <!-- </div> -->
                             </div>
 
                             <form class="mt-10">
@@ -81,7 +103,7 @@
                                                 <input type="radio" name="size-choice" value="XS" class="sr-only"
                                                     aria-labelledby="size-choice-1-label" />
                                                 <img src="{{ asset('images/avatar.jpeg') }}" alt=""
-                                                    class="rounded-full border-5 border-solid border-4 border-purple-400 shadow-xl" />
+                                                    class="rounded-full border-5 border-solid border-3 border-teal-600 shadow-xl" />
                                                 <span class="pointer-events-none absolute -inset-px rounded-md"
                                                     aria-hidden="true"></span>
                                             </label>
@@ -117,7 +139,7 @@
                                 </div>
 
                                 <button type="submit"
-                                    class="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Add
+                                    class="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-teal-600 py-3 px-8 text-base font-medium text-white hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2">Add
                                     to cart</button>
                             </form>
                         </div>
@@ -171,42 +193,31 @@
         <div class="w-full md:mt-16 md:w-3/12 sm:w-3/12">
             <div class="bg-white">
                 <div class="border border-gray-200 p-4 rounded bg-white">
-                    <h4 class="text-gray-800 text-lg font-medium uppercase">order summary</h4>
+                    <h4 class="text-gray-800 text-lg font-medium uppercase mb-10">Nusa Penida Full Day Trip</h4>
                     <div class="mt-4">
                         <div class="flow-root">
-                            <ul role="list" class="py-6 divide-y divide-gray-200">
-                                <li class="flex">
-                                    <div class="ml-4 flex flex-1 flex-col">
-                                        <div>
-                                            <div class="flex justify-between text-base font-medium text-gray-900">
-                                                <h3>
-                                                    <a href="#">Nusa Penida Full Day Trip</a>
-                                                </h3>
-                                                <p class="ml-4">Rp. 750.000</p>
-                                            </div>
-                                            <p class="mt-1 text-sm text-gray-500">Bayu Danu</p>
-                                        </div>
-                                        <div class="flex flex-1 items-end justify-between text-sm">
-                                            <div class="flex">
-                                                <button type="button"
-                                                    class="font-medium text-indigo-600 hover:text-indigo-500">Remove</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
+                            <p class="font-mon font-medium text-sm text-teal-600">Pick the date :</p>
+                            <input type="date" class="bg-gray-50 border mt-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <p class="font-mon font-medium text-sm text-teal-600 mt-5">Pick the time :</p>
+                            <input type="time" class="bg-gray-50 border mt-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <p class="font-mon font-medium text-sm text-teal-600 mt-5">Adult :</p>
+                            <input type="number" class="bg-gray-50 border mt-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="amount">
+                            <p class="font-mon font-medium text-sm text-teal-600 mt-5">Child (0-10th) :</p>
+                            <input type="number" class="bg-gray-50 border mt-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="amount">
+                 
+                           
                         </div>
                     </div>
 
                     <div class="border-t border-gray-200 py-6 px-4 sm:px-4">
                         <div class="flex justify-between text-base font-medium text-gray-900">
                             <p>Total</p>
-                            <p>Rp. 750.000</p>
+                            <p class="font-extrabold text-lg"><span>IDR.</span> 750.000</p>
                         </div>
 
                         <div class="mt-6">
                             <a href="#"
-                                class="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Order
+                                class="flex items-center justify-center rounded-md border border-transparent bg-teal-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-teal-700">Order
                                 Now</a>
                         </div>
                     </div>
