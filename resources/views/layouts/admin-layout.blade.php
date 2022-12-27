@@ -8,6 +8,9 @@
 
   <title>{{ config('app.name', 'Laravel') }}</title>
 
+  {{-- livewire --}}
+  @livewireStyles
+
   <!-- Fonts -->
   <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
 
@@ -59,6 +62,8 @@
     </main>
   </div>
   <script src="https://unpkg.com/flowbite@1.5.5/dist/flowbite.js"></script>
+  {{-- livewire --}}
+  @livewireScripts
 </body>
 
 </html>
