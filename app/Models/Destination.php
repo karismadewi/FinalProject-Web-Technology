@@ -2,14 +2,14 @@
 
 namespace App\Models;
 
-// use App\Models\TourGuide;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Destination extends Model
 {
     use HasFactory;
-    protected $guarded = [];
+    protected $fillable = ['dest_name', 'dest_description', 'dest_image', 'tguide_id'];
+    //protected $guarded = [];
 
     public function tour_guide()
     {

@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\DestinationController;
 use App\Http\Controllers\Admin\TourGuideController;
+use App\Http\Controllers\Admin\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,15 +27,12 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/booking', [HomeController::class, 'booking'])->name('booking');
-Route::get('/history', [HomeController::class, 'history'])->name('history');
-
-Route::get('/admin/tour_guide', [TourGuideController::class, 'index'])->name('tour_guide.index');
-Route::get('/admin/tour_guide/create', [TourGuideController::class, 'create'])->name('tour_guide.create');
-Route::post('/admin/tour_guide/store', [TourGuideController::class, 'store'])->name('tour_guide.store');
-Route::get('/admin/tour_guide/{id}/edit', [TourGuideController::class, 'edit'])->name('tour_guide.edit');
-Route::put('/admin/tour_guide/{id}', [TourGuideController::class, 'update'])->name('tour_guide.update');
-Route::delete('/admin/tour_guide/{id}', [TourGuideController::class, 'destroy'])->name('tour_guide.destroy');
+// to be deleted after implementation
+Route::get('/profileui', [HomeController::class, 'profile'])->name('profileui');
+Route::get('/service', [HomeController::class, 'service'])->name('service');
+Route::get('/booking', [HomeController::class, 'booking'])->name('booking')->middleware(['auth', 'verified', 'checkRole:admin,user']);
+Route::get('/history', [HomeController::class, 'history'])->name('history')->middleware(['auth', 'verified', 'checkRole:admin,user']);
+Route::get('/review', [HomeController::class, 'review'])->name('review')->middleware(['auth', 'verified', 'checkRole:admin,user']);
 
 Route::resource('admin/destinations', DestinationController::class);
 
@@ -43,5 +41,23 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::middleware('auth', 'verified', 'checkRole:admin')->group(function () {
+    Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.index');
+    Route::get('/admin/tour_guide', [TourGuideController::class, 'index'])->name('tour_guide.index');
+    Route::get('/admin/tour_guide/create', [TourGuideController::class, 'create'])->name('tour_guide.create');
+    Route::post('/admin/tour_guide/store', [TourGuideController::class, 'store'])->name('tour_guide.store');
+    Route::get('/admin/tour_guide/{id}/edit', [TourGuideController::class, 'edit'])->name('tour_guide.edit');
+    Route::put('/admin/tour_guide/{id}', [TourGuideController::class, 'update'])->name('tour_guide.update');
+    Route::delete('/admin/tour_guide/{id}', [TourGuideController::class, 'destroy'])->name('tour_guide.destroy');
+});
+
+
+Route::get('admin', function () {
+    return view('tour_guide');
+})->middleware('checkRole:admin');
+Route::get('user', function () {
+    return view('home');
+})->middleware(['checkRole:admin,user']);
 
 require __DIR__ . '/auth.php';

@@ -15,15 +15,14 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            
-            $table->date('duration');
+            $table->string('transaction_code', 11);
             $table->date('transaction_date');
             $table->timestamps();
         });
-        Schema::table('destinations', function (Blueprint $table) {
-            $table->foreignId('tg_id')->constrained('tour_guides');
-            $table->foreignId('dest_id')->constrained('destinations');
-            $table->foreignId('user_id')->constrained('tour_guides');
+        Schema::table('transactions', function (Blueprint $table) {
+            $table->foreignId('tougui_id')->constrained('tour_guides');
+            $table->foreignId('destnat_id')->constrained('destinations');
+            $table->foreignId('u_id')->constrained('users');
         });
     }
 

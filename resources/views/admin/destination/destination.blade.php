@@ -1,27 +1,5 @@
 <x-admin-layout>
-  {{-- sidebar --}}
   <div class="flex">
-    <aside class="w-64 mr-5 bg-teal-500 text-white py-4 px-3 rounded h-screen" aria-label="Sidebar">
-      <div class="">
-        <h3 class="font-bold text-2xl mb-5 text-center">Admin</h3>
-        <ul class="space-y-2">
-          <li>
-            <a href="tour_guide" class="flex items-center p-2 text-base font-normal rounded-lg hover:bg-teal-300">
-              <i class="fa-solid fa-table-columns"></i>
-              <span class="ml-3 text-white">Tour Guides</span>
-            </a>
-          </li>
-          <li>
-            <a href="destination" class="flex items-center p-2 text-base font-normal rounded-lg hover:bg-teal-300">
-              <i class="fa-solid fa-table-columns"></i>
-              <span class="ml-3 text-white">Destinations</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </aside>
-    {{-- end sidebar --}}
-
     {{-- table --}}
     <div class="overflow-x-auto relative w-full">
       <h1 class="font-bold text-3xl my-5">List Destination of Guidy 2022</h1>
@@ -63,6 +41,9 @@
             <th scope="col" class="py-3 px-6">
               Tour Guide
             </th>
+            <th scope="col" class="py-3 px-6">
+              Action
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -85,6 +66,14 @@
               </td>
               <td class="py-4 px-6">
                 {{ $destination->tour_guide->tg_name }}
+              </td>
+              <td class="py-4 px-6 flex items-center">
+                <a href="{{ 'destinations/' . $destination->id . '/edit' }}" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xs px-4 py-1.5 mr-2 mb-2">Edit</a>
+                <form action="{{ 'destinations/' . $destination->id }}" method="POST" onsubmit="confirm('Are you sure to delete this data?')">
+                  @csrf
+                  @method('DELETE')
+                  <button type="submit" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-xs px-4 py-1.5 mr-2 mb-2">Delete</button>
+                </form>
               </td>
             </tr>
             @php
