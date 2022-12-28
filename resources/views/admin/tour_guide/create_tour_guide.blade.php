@@ -1,7 +1,7 @@
 <x-admin-layout>
   <div class="flex">
     {{-- sidebar --}}
-    <aside class="w-64 mr-5 bg-teal-500 text-white py-4 px-3 rounded h-screen" aria-label="Sidebar">
+    {{-- <aside class="w-64 mr-5 bg-teal-500 text-white py-4 px-3 rounded h-screen" aria-label="Sidebar">
       <div class="">
         <h3 class="font-bold text-2xl mb-5 text-center">Admin</h3>
         <ul class="space-y-2">
@@ -19,11 +19,11 @@
           </li>
         </ul>
       </div>
-    </aside>
+    </aside> --}}
     {{-- end sidebar --}}
 
     {{-- form --}}
-    <div class="container">
+    <div class="w-[1000px] h-screen relative">
       <h1 class="font-bold text-3xl my-7">Add Data Tour Guide</h1>
       <hr class="mb-5 h-px bg-gray-300 border-0">
       <form action="{{ route('tour_guide.store') }}" method="POST" enctype="multipart/form-data">

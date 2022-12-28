@@ -7,14 +7,16 @@ use App\Models\TourGuide;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
+use Livewire\WithPagination;
 
 class TourGuideController extends Controller
 {
+    use WithPagination;
     public function index(Request $request)
     {
         $keyword = $request->keyword;
-        $data = TourGuide::where('tg_name', 'LIKE', '%'.$keyword.'%')
-                ->paginate(2);
+        $data = TourGuide::where('tg_name', 'LIKE', '%' . $keyword . '%')
+            ->paginate(2);
         return view('admin.tour_guide.tour_guide')->with('data', $data);
     }
     public function create()
@@ -48,7 +50,7 @@ class TourGuideController extends Controller
             'tg_about' => 'required',
             'tg_destination' => 'required',
             'tg_price' => 'required|numeric',
-            'tg_image' => 'required|image|mimes:jpeg,png,jpg|max:2048'
+            'tg_image' => 'required|image|mimes:jpeg,png,jpg'
         ], $message);
 
         $image_file = $request->file('tg_image');
@@ -98,7 +100,7 @@ class TourGuideController extends Controller
             'tg_about' => 'required',
             'tg_destination' => 'required',
             'tg_price' => 'required|numeric',
-            'tg_image' => 'required|image|mimes:jpeg,png,jpg|max:2048'
+            'tg_image' => 'required|image|mimes:jpeg,png,jpg'
         ], $message);
         $data = [
             'tg_name' => $request->input('tg_name'),

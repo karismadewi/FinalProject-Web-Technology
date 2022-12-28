@@ -32,8 +32,10 @@
         <p class="md:text-lg text-gray-500 text-base">Driver : Bayu Danu</p>
         <p class="md:text-lg text-gray-500 text-base">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis eos aspernatur est, officia in ipsa. Voluptatibus aliquam rem alias quasi fuga maiores minus beatae, repellendus nostrum quod tempore, voluptas eos!</p>
         <p class="text-xl font-black text-gray-800"><span>IDR</span> 750.000</p>
-        <a href="http://" class="text-teal-700 hover:text-teal-800"><p class="text-base font-black text-right">Give Review</p></a>
-        
+        <a href="review" class="text-teal-700 hover:text-teal-800">
+          <p class="text-base font-black text-right">Give Review</p>
+        </a>
+
       </div>
     </div>
     <div class="w-full relative flex flex-col  mb-7 md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 mx-auto border border-slate-100">
@@ -51,10 +53,12 @@
         <p class="md:text-lg text-gray-500 text-base">Driver : Bayu Danu</p>
         <p class="md:text-lg text-gray-500 text-base">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis eos aspernatur est, officia in ipsa. Voluptatibus aliquam rem alias quasi fuga maiores minus beatae, repellendus nostrum quod tempore, voluptas eos!</p>
         <p class="text-xl font-black text-gray-800"><span>IDR</span> 750.000</p>
-        <a href="http://" class="text-teal-700 hover:text-teal-800"><p class="text-base font-black text-right">Give Review</p></a>
-        
+        <a href="http://" class="text-teal-700 hover:text-teal-800">
+          <p class="text-base font-black text-right">Give Review</p>
+        </a>
+
       </div>
     </div>
   </div>
-  
+
 </x-home-layout>

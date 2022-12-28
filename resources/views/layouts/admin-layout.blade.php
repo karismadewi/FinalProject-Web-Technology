@@ -43,8 +43,8 @@
 </head>
 
 <body class="font-sans antialiased">
-  <div class="min-h-screen bg-gray-100">
-    {{-- @include('layouts.navigation-admin') --}}
+  <div class="min-h-screen bg-gray-100 flex">
+    @include('layouts.navigation-admin')
 
     <!-- Page Heading -->
     @if (isset($header))
