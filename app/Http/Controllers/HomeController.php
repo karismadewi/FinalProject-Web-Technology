@@ -3,21 +3,29 @@
 namespace App\Http\Controllers;
 
 use App\Models\Destination;
+use App\Models\Package;
 use App\Models\TourGuide;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index() {
-        $tour_guides = TourGuide::all();
+        $packages = Package::all();
         $destinations = Destination::all();
+        $tour_guides = TourGuide::all();
+
         return view('frontpage.home', [
+            'packages' => Package::with(['tour_guide', 'destination'])->get(),
+            'destinations' => $destinations,
             'tour_guides' => $tour_guides,
-            'destinations' => $destinations
         ]);
     }
-    public function booking() {
-        return view('frontpage.booking');
+    public function booking($id) {
+        // $data = Package::with(['tour_guide', 'destination'])->where('id', $id)->first();
+        return view('frontpage.booking', [
+            'packages' => Package::with(['tour_guide', 'destination'])->where('id', $id)->first(),
+            'tour_guides' => TourGuide::all(),
+        ]);
     }
     public function history() {
         return view('frontpage.history');

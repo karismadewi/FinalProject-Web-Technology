@@ -30,7 +30,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 // to be deleted after implementation
 Route::get('/profileui', [HomeController::class, 'profile'])->name('profileui');
 Route::get('/service', [HomeController::class, 'service'])->name('service');
-Route::get('/booking', [HomeController::class, 'booking'])->name('booking')->middleware(['auth', 'verified', 'checkRole:admin,user']);
+Route::get('/booking/{id}', [HomeController::class, 'booking'])->name('booking')->middleware(['auth', 'verified', 'checkRole:admin,user']);
 Route::get('/history', [HomeController::class, 'history'])->name('history')->middleware(['auth', 'verified', 'checkRole:admin,user']);
 Route::get('/review', [HomeController::class, 'review'])->name('review')->middleware(['auth', 'verified', 'checkRole:admin,user']);
 

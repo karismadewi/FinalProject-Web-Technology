@@ -1,13 +1,13 @@
 <x-home-layout>
-    <div class="container mx-auto pt-10">
-        <div class="flex flex-wrap flex-row">
-            <aside class="w-4/12 h-screen sticky top-0">
+    <div class="container pt-10 mx-auto">
+        <div class="flex flex-row flex-wrap">
+            <aside class="sticky top-0 w-4/12 h-screen">
                 <!-- card -->
                 <div
-                    class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+                    class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md ">
                     <div class="flex justify-end px-4 pt-4">
                         <button id="dropdownButton" data-dropdown-toggle="dropdown"
-                            class="inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-1.5"
+                            class="inline-block text-gray-500 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-1.5"
                             type="button">
                             <span class="sr-only">Open dropdown</span>
                             <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20"
@@ -22,20 +22,20 @@
                         </button>
                         <!-- Dropdown menu -->
                         <div id="dropdown"
-                            class="z-10 hidden text-base list-none bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700">
+                            class="z-10 hidden text-base list-none bg-white divide-y divide-gray-100 rounded shadow w-44">
                             <ul class="py-1" aria-labelledby="dropdownButton">
                                 <li>
                                     <a href="#"
-                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Edit</a>
+                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 ">Edit</a>
                                 </li>
                                 <li>
                                     <a href="#"
-                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Export
+                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 ">Export
                                         Data</a>
                                 </li>
                                 <li>
                                     <a href="#"
-                                        class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Delete</a>
+                                        class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100 ">Delete</a>
                                 </li>
                             </ul>
                         </div>
@@ -43,16 +43,16 @@
                     <div class="flex flex-col items-center pb-4">
                         <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src="./images/avatar.jpeg"
                             alt="Bonnie image" />
-                        <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Bonnie Green</h5>
-                        <p class=" font-normal text-gray-500 dark:text-gray-400 text-center text-sm"><span
-                                class="font-bold tex-medium text-teal-700">"</span> Let explore Bali together with me as
-                            your guide <span class="font-bold tex-medium text-teal-700">"</span></p>
+                        <h5 class="mb-1 text-xl font-medium text-gray-900 ">Bonnie Green</h5>
+                        <p class="text-sm font-normal text-center text-gray-500"><span
+                                class="font-bold text-teal-700 tex-medium">"</span> Let explore Bali together with me as
+                            your guide <span class="font-bold text-teal-700 tex-medium">"</span></p>
                         <div>
-                            <i class="fa-solid fa-star text-yellow-500"></i>
-                            <i class="fa-solid fa-star text-yellow-500"></i>
-                            <i class="fa-solid fa-star text-yellow-500"></i>
-                            <i class="fa-solid fa-star text-yellow-500"></i>
-                            <i class="fa-regular fa-star text-yellow-500"></i>
+                            <i class="text-yellow-500 fa-solid fa-star"></i>
+                            <i class="text-yellow-500 fa-solid fa-star"></i>
+                            <i class="text-yellow-500 fa-solid fa-star"></i>
+                            <i class="text-yellow-500 fa-solid fa-star"></i>
+                            <i class="text-yellow-500 fa-regular fa-star"></i>
 
 
                             <!-- Heroicon name: mini/star -->
@@ -63,19 +63,19 @@
                                 Me
                             </a>
                             <a href="#"
-                                class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700">Message</a>
+                                class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600dark:hover:border-gray-700 dark:focus:ring-gray-700">Message</a>
                         </div>
                     </div>
 
-                    <div class="max-w-sm pb-6 pr-6 pl-8 pt-3">
+                    <div class="max-w-sm pt-3 pb-6 pl-8 pr-6">
                         <hr / class=" border-slate-200">
 
-                        <p class="mb-2 pt-4 "><i class="fa-solid fa-location-dot pr-3"></i>I live in <span
-                                class="font-bold text-base text-teal-700">Denpasar</span></p>
-                        <p class="mb-2"><i class="fa-solid fa-earth-americas pr-2"></i>I speak <span
-                                class="font-bold text-base text-teal-700">English, Mandarin, Franch</span></p>
-                        <p class="mb-2"><i class="fa-solid fa-circle-check pr-2"></i>Verified <span
-                                class="font-bold text-base text-teal-700">Native Host</span></p>
+                        <p class="pt-4 mb-2 "><i class="pr-3 fa-solid fa-location-dot"></i>I live in <span
+                                class="text-base font-bold text-teal-700">Denpasar</span></p>
+                        <p class="mb-2"><i class="pr-2 fa-solid fa-earth-americas"></i>I speak <span
+                                class="text-base font-bold text-teal-700">English, Mandarin, Franch</span></p>
+                        <p class="mb-2"><i class="pr-2 fa-solid fa-circle-check"></i>Verified <span
+                                class="text-base font-bold text-teal-700">Native Host</span></p>
 
 
 
@@ -84,9 +84,9 @@
                     <!-- end card -->
                     <!-- start card packages -->
             </aside>
-            <main class="w-8/12 flex flex-wrap gap-7">
+            <main class="flex flex-wrap w-8/12 gap-7">
                 <div
-                    class="max-w-sm mb-5 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+                    class="max-w-sm mb-5 bg-white border border-gray-200 rounded-lg shadow-md ">
                     <a href="#">
                         <img class="rounded-t-lg" src="./images/bg-banner.jpeg" alt="" />
                     </a>
@@ -96,28 +96,28 @@
                                 <span>City Escape :</span> <span>Explore North Bali Trip</span> </h5>
                         </a>
                         <!-- name of guide -->
-                        <p class="text-base text-teal-600 font-semibold">Bonnie Green</p>
+                        <p class="text-base font-semibold text-teal-600">Bonnie Green</p>
                         <div class="text-xs">
-                            <i class="fa-solid fa-star text-yellow-500"></i>
-                            <i class="fa-solid fa-star text-yellow-500"></i>
-                            <i class="fa-solid fa-star text-yellow-500"></i>
-                            <i class="fa-solid fa-star text-yellow-500"></i>
-                            <i class="fa-regular fa-star text-yellow-500"></i>
+                            <i class="text-yellow-500 fa-solid fa-star"></i>
+                            <i class="text-yellow-500 fa-solid fa-star"></i>
+                            <i class="text-yellow-500 fa-solid fa-star"></i>
+                            <i class="text-yellow-500 fa-solid fa-star"></i>
+                            <i class="text-yellow-500 fa-regular fa-star"></i>
                             <!-- Heroicon name: mini/star -->
                         </div>
-                        <div class="text-right mt-5">
+                        <div class="mt-5 text-right">
                             <p class="text-2xl font-bold font-mon">IDR <span>750000</span></p>
-                            <p class="text-slate-600 font-semibold  text-base"><i
-                                    class="fa-solid fa-tag text-yellow-500 text-sm "></i> Sold
+                            <p class="text-base font-semibold text-slate-600"><i
+                                    class="text-sm text-yellow-500 fa-solid fa-tag "></i> Sold
                                 out <span>3k++</span></p>
-                            <p class=" text-base text-bold"><a href="#"
+                            <p class="text-base text-bold"><a href="#"
                                     class="ml-1 text-sm font-bold text-teal-600 hover:text-teal-500">2.1k
                                     reviews</a></p>
                         </div>
                     </div>
                 </div>
                 <div
-                    class="max-w-sm mb-5 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+                    class="max-w-sm mb-5 bg-white border border-gray-200 rounded-lg shadow-md ">
                     <a href="#">
                         <img class="rounded-t-lg" src="./images/bg-banner.jpeg" alt="" />
                     </a>
@@ -127,28 +127,28 @@
                                 <span>City Escape :</span> <span>Explore North Bali Trip</span> </h5>
                         </a>
                         <!-- name of guide -->
-                        <p class="text-base text-teal-600 font-semibold">Bonnie Green</p>
+                        <p class="text-base font-semibold text-teal-600">Bonnie Green</p>
                         <div class="text-xs">
-                            <i class="fa-solid fa-star text-yellow-500"></i>
-                            <i class="fa-solid fa-star text-yellow-500"></i>
-                            <i class="fa-solid fa-star text-yellow-500"></i>
-                            <i class="fa-solid fa-star text-yellow-500"></i>
-                            <i class="fa-regular fa-star text-yellow-500"></i>
+                            <i class="text-yellow-500 fa-solid fa-star"></i>
+                            <i class="text-yellow-500 fa-solid fa-star"></i>
+                            <i class="text-yellow-500 fa-solid fa-star"></i>
+                            <i class="text-yellow-500 fa-solid fa-star"></i>
+                            <i class="text-yellow-500 fa-regular fa-star"></i>
                             <!-- Heroicon name: mini/star -->
                         </div>
-                        <div class="text-right mt-5">
+                        <div class="mt-5 text-right">
                             <p class="text-2xl font-bold font-mon">IDR <span>750000</span></p>
-                            <p class="text-slate-600 font-semibold  text-base"><i
-                                    class="fa-solid fa-tag text-yellow-500 text-sm "></i> Sold
+                            <p class="text-base font-semibold text-slate-600"><i
+                                    class="text-sm text-yellow-500 fa-solid fa-tag "></i> Sold
                                 out <span>3k++</span></p>
-                            <p class=" text-base text-bold"><a href="#"
+                            <p class="text-base text-bold"><a href="#"
                                     class="ml-1 text-sm font-bold text-teal-600 hover:text-teal-500">2.1k
                                     reviews</a></p>
                         </div>
                     </div>
                 </div>
                 <div
-                    class="max-w-sm mb-5 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+                    class="max-w-sm mb-5 bg-white border border-gray-200 rounded-lg shadow-md ">
                     <a href="#">
                         <img class="rounded-t-lg" src="./images/bg-banner.jpeg" alt="" />
                     </a>
@@ -158,28 +158,28 @@
                                 <span>City Escape :</span> <span>Explore North Bali Trip</span> </h5>
                         </a>
                         <!-- name of guide -->
-                        <p class="text-base text-teal-600 font-semibold">Bonnie Green</p>
+                        <p class="text-base font-semibold text-teal-600">Bonnie Green</p>
                         <div class="text-xs">
-                            <i class="fa-solid fa-star text-yellow-500"></i>
-                            <i class="fa-solid fa-star text-yellow-500"></i>
-                            <i class="fa-solid fa-star text-yellow-500"></i>
-                            <i class="fa-solid fa-star text-yellow-500"></i>
-                            <i class="fa-regular fa-star text-yellow-500"></i>
+                            <i class="text-yellow-500 fa-solid fa-star"></i>
+                            <i class="text-yellow-500 fa-solid fa-star"></i>
+                            <i class="text-yellow-500 fa-solid fa-star"></i>
+                            <i class="text-yellow-500 fa-solid fa-star"></i>
+                            <i class="text-yellow-500 fa-regular fa-star"></i>
                             <!-- Heroicon name: mini/star -->
                         </div>
-                        <div class="text-right mt-5">
+                        <div class="mt-5 text-right">
                             <p class="text-2xl font-bold font-mon">IDR <span>750000</span></p>
-                            <p class="text-slate-600 font-semibold  text-base"><i
-                                    class="fa-solid fa-tag text-yellow-500 text-sm "></i> Sold
+                            <p class="text-base font-semibold text-slate-600"><i
+                                    class="text-sm text-yellow-500 fa-solid fa-tag "></i> Sold
                                 out <span>3k++</span></p>
-                            <p class=" text-base text-bold"><a href="#"
+                            <p class="text-base text-bold"><a href="#"
                                     class="ml-1 text-sm font-bold text-teal-600 hover:text-teal-500">2.1k
                                     reviews</a></p>
                         </div>
                     </div>
                 </div>
                 <div
-                    class="max-w-sm mb-7 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+                    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md mb-7 ">
                     <a href="#">
                         <img class="rounded-t-lg" src="./images/bg-banner.jpeg" alt="" />
                     </a>
@@ -189,21 +189,21 @@
                                 <span>City Escape :</span> <span>Explore North Bali Trip</span> </h5>
                         </a>
                         <!-- name of guide -->
-                        <p class="text-base text-teal-600 font-semibold">Bonnie Green</p>
+                        <p class="text-base font-semibold text-teal-600">Bonnie Green</p>
                         <div class="text-xs">
-                            <i class="fa-solid fa-star text-yellow-500"></i>
-                            <i class="fa-solid fa-star text-yellow-500"></i>
-                            <i class="fa-solid fa-star text-yellow-500"></i>
-                            <i class="fa-solid fa-star text-yellow-500"></i>
-                            <i class="fa-regular fa-star text-yellow-500"></i>
+                            <i class="text-yellow-500 fa-solid fa-star"></i>
+                            <i class="text-yellow-500 fa-solid fa-star"></i>
+                            <i class="text-yellow-500 fa-solid fa-star"></i>
+                            <i class="text-yellow-500 fa-solid fa-star"></i>
+                            <i class="text-yellow-500 fa-regular fa-star"></i>
                             <!-- Heroicon name: mini/star -->
                         </div>
-                        <div class="text-right mt-5">
+                        <div class="mt-5 text-right">
                             <p class="text-2xl font-bold font-mon">IDR <span>750000</span></p>
-                            <p class="text-slate-600 font-semibold  text-base"><i
-                                    class="fa-solid fa-tag text-yellow-500 text-sm "></i> Sold
+                            <p class="text-base font-semibold text-slate-600"><i
+                                    class="text-sm text-yellow-500 fa-solid fa-tag "></i> Sold
                                 out <span>3k++</span></p>
-                            <p class=" text-base text-bold"><a href="#"
+                            <p class="text-base text-bold"><a href="#"
                                     class="ml-1 text-sm font-bold text-teal-600 hover:text-teal-500">2.1k
                                     reviews</a></p>
                         </div>
@@ -212,18 +212,18 @@
                 <!-- comment and review -->
                 <div>
                     <h2 class="text-2xl font-bold text-slate-600 mb-7">Reviews</h2>
-                    <div class="p-8 mr-12 mb-6 text-base bg-white rounded-lg dark:bg-gray-900 border">
-                        <div class="flex justify-between items-center mb-2">
+                    <div class="p-8 mb-6 mr-12 text-base bg-white border rounded-lg ">
+                        <div class="flex items-center justify-between mb-2">
                             <div class="flex items-center">
-                                <p class="inline-flex items-center mr-3 text-base text-gray-900 dark:text-white"><img
-                                        class="mr-2 w-10 h-10 rounded-full"
+                                <p class="inline-flex items-center mr-3 text-base text-gray-900 "><img
+                                        class="w-10 h-10 mr-2 rounded-full"
                                         src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
                                         alt="Michael Gough">Michael Gough</p>
-                                <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-02-08"
+                                <p class="text-sm text-gray-600"><time pubdate datetime="2022-02-08"
                                         title="February 8th, 2022">Feb. 8, 2022</time></p>
                             </div>
                             <button id="dropdownComment1Button" data-dropdown-toggle="dropdownComment1"
-                                class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-400 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                                class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-400 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:focus:ring-gray-600"
                                 type="button">
                                 <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -235,41 +235,41 @@
                             </button>
                             <!-- Dropdown menu -->
                             <div id="dropdownComment1"
-                                class="hidden z-10 w-36 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
-                                <ul class="py-1 text-sm text-gray-700 dark:text-gray-200"
+                                class="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-36 ">
+                                <ul class="py-1 text-sm text-gray-700 "
                                     aria-labelledby="dropdownMenuIconHorizontalButton">
                                     <li>
                                         <a href="#"
-                                            class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
+                                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:text-white">Edit</a>
                                     </li>
                                     <li>
                                         <a href="#"
-                                            class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Remove</a>
+                                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:text-white">Remove</a>
                                     </li>
                                     <li>
                                         <a href="#"
-                                            class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Report</a>
+                                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:text-white">Report</a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
-                        <p class="text-gray-500 dark:text-gray-400">Very straight-to-point article. Really worth time
+                        <p class="text-gray-500">Very straight-to-point article. Really worth time
                             reading. Thank you! But tools are just the
                             instruments for the UX designers. The knowledge of the design tools are as important as the
                             creation of the design strategy.</p>
                     </div>
-                    <div class="p-8 mr-12 mb-6 text-base bg-white rounded-lg dark:bg-gray-900 border">
-                        <div class="flex justify-between items-center mb-2">
+                    <div class="p-8 mb-6 mr-12 text-base bg-white border rounded-lg ">
+                        <div class="flex items-center justify-between mb-2">
                             <div class="flex items-center">
-                                <p class="inline-flex items-center mr-3 text-base text-gray-900 dark:text-white"><img
-                                        class="mr-2 w-10 h-10 rounded-full"
+                                <p class="inline-flex items-center mr-3 text-base text-gray-900 "><img
+                                        class="w-10 h-10 mr-2 rounded-full"
                                         src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
                                         alt="Michael Gough">Michael Gough</p>
-                                <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-02-08"
+                                <p class="text-sm text-gray-600"><time pubdate datetime="2022-02-08"
                                         title="February 8th, 2022">Feb. 8, 2022</time></p>
                             </div>
                             <button id="dropdownComment1Button" data-dropdown-toggle="dropdownComment1"
-                                class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-400 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                                class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-400 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:focus:ring-gray-600"
                                 type="button">
                                 <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -281,31 +281,31 @@
                             </button>
                             <!-- Dropdown menu -->
                             <div id="dropdownComment1"
-                                class="hidden z-10 w-36 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
+                                class="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-36 dark:divide-gray-600">
                                 <ul class="py-1 text-sm text-gray-700 dark:text-gray-200"
                                     aria-labelledby="dropdownMenuIconHorizontalButton">
                                     <li>
                                         <a href="#"
-                                            class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
+                                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:text-white">Edit</a>
                                     </li>
                                     <li>
                                         <a href="#"
-                                            class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Remove</a>
+                                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:text-white">Remove</a>
                                     </li>
                                     <li>
                                         <a href="#"
-                                            class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Report</a>
+                                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:text-white">Report</a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
-                        <p class="text-gray-500 dark:text-gray-400">Very straight-to-point article. Really worth time
+                        <p class="text-gray-500">Very straight-to-point article. Really worth time
                             reading. Thank you! But tools are just the
                             instruments for the UX designers. The knowledge of the design tools are as important as the
                             creation of the design strategy.</p>
                     </div>
                 </div>
-                
+
                 <!-- end comment and review -->
             </main>
 

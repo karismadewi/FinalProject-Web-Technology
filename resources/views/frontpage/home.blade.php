@@ -1,11 +1,11 @@
 <x-home-layout>
   <!-- Banner -->
-  <div class="w-full bg-cover bg-center" style="height: 75vh; background-image: url('{{ asset('images/bg-banner.jpeg') }}')">
-    <div class="flex items-center justify-center h-full w-full bg-gray-900 bg-opacity-50">
+  <div class="w-full bg-center bg-cover" style="height: 75vh; background-image: url('{{ asset('images/bg-banner.jpeg') }}')">
+    <div class="flex items-center justify-center w-full h-full bg-gray-900 bg-opacity-50">
       <div class="w-full">
-        <div class="text-center mb-8">
-          <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">Explore the wonderful Of Indonesia</h1>
-          <p class="mb-6 text-lg w-4/6 font-normal text-slate-200 mx-auto lg:text-xl sm:px-16 xl:px-48">Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
+        <div class="mb-8 text-center">
+          <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl">Explore the wonderful Of Indonesia</h1>
+          <p class="w-4/6 mx-auto mb-6 font-normal text-lxl text-slate-200 lg:text-2xl sm:px-16 xl:px-48">With Guidy, make your holiday enjoyable, magical, and memorable!</p>
         </div>
         <form class="w-1/2 mx-auto">
           <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
@@ -13,7 +13,7 @@
             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
               <i class="fa-solid fa-magnifying-glass"></i>
             </div>
-            <input type="search" id="default-search" class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg border-none bg-white placeholder-gray-400" placeholder="Destination, Place ..." required />
+            <input type="search" id="default-search" class="block w-full p-4 pl-10 text-sm text-gray-900 placeholder-gray-400 bg-white border border-gray-300 border-none rounded-lg" placeholder="Destination, Place ..." required />
             <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-teal-500 hover:bg-teal-600 font-medium rounded-lg text-sm px-4 py-2">Search</button>
           </div>
         </form>
@@ -23,209 +23,149 @@
   <!-- End Banner -->
 
   <!-- Best Recommend -->
-  <div class="bg-white py-20">
+  <div class="py-20 bg-white">
     <div class="container mx-auto">
       <!-- Title -->
-      <div class="text-center my-4">
+      <div class="my-4 text-center">
         <h1 class="text-3xl font-semibold text-center capitalize lg:text-4xl text-slate-700">best recommend</h1>
-        <p class="max-w-2xl mx-auto my-4 text-center text-slate-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo incidunt ex placeat modi magni quia error alias</p>
-        <hr class="w-2/12 mx-auto border-2 rounded-lg border-teal-500" />
+        <p class="max-w-2xl mx-auto my-4 text-lg text-center text-slate-600">Find your dream holiday and let our guide serve you with the best serve ever!</p>
+        <hr class="w-2/12 mx-auto border-2 border-teal-500 rounded-lg" />
       </div>
       <!-- End Title -->
 
-      <div class="flex flex-wrap flex-row">
+      <div class="flex flex-row flex-wrap">
         <!-- Card -->
-        <div class="md:w-3/12 p-4">
-          <a href="booking">
-            <div class="bg-white rounded-xg shadow-xl">
-              <img src="{{ asset('images/bg-banner.jpeg') }}" alt="" class="rounded-t-lg" />
+        @foreach ($packages as $item)
+        <div class="p-4 md:w-3/12">
+          <a href="{{'booking/'.$item->id}}">
+            <div class="bg-white shadow-xl rounded-xg">
+              <img src="{{ asset('images/destinations/'.$item->destination->dest_image) }}" alt="" class="rounded-t-lg" />
               <div class="p-6">
-                <h2 class="font-bold mb-0 text-2xl text-slate-800">Nusa Penida Trip</h2>
-                <h3 class="font-semibold mb-4 text-sm text-teal-600">Wayan Harry Samjoe</h3>
-                <p class="text-slate-600 text-sm mb-4"><i class="fa-solid fa-location-dot"></i> Nusa Penida</p>
-                <p class="text-slate-600 mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, alias id reiciendis dolorem odit eveniet accusamus unde...</p>
-                <p class="text-slate-600 font-semibold my-4"><i class="fa-solid fa-tag text-yellow-500"></i>Sold out 3k++</p>
+                <h2 class="mb-0 text-2xl font-bold text-slate-800">{{$item->package_name}}</h2>
+                <h3 class="mb-4 text-sm font-semibold text-teal-600">{{$item->tour_guide->tg_name}}</h3>
+                <p class="mb-4 text-sm text-slate-600"><i class="fa-solid fa-location-dot"></i> {{$item->destination->dest_name}}</p>
+                <p class="mb-2 text-slate-600">{{$item->package_desc}}</p>
+                <p class="my-4 font-semibold text-slate-600"><i class="text-yellow-500 fa-solid fa-tag"></i>Sold out {{$item->sold}}</p>
 
                 <p class="text-right text-teal-600"><a href="http://" class="font-normal">2.1k Reviews</a></p>
 
-                <hr / class=" border-slate-700 rounded-lg">
-                <div class="flex flex-row w-full justify-between mt-4">
-                  <p class="text-slate-600 my-2 text-md font-semibold"><span class="text-slate-500 text-sm font-light">From</span> Rp. 450.000</p>
-                  <p class="text-slate-600 my-2 text-md"><i class="fa-regular fa-clock"></i> 12-15 Hours</p>
+                <hr / class="rounded-lg border-slate-700">
+                <div class="flex flex-row justify-between w-full mt-4">
+                  <p class="my-2 font-semibold text-slate-600 text-md"><span class="text-sm font-light text-slate-500">From</span> Rp{{$item->price}}</p>
+                  <p class="my-2 text-slate-600 text-md"><i class="fa-regular fa-clock"></i> {{$item->duration}} Hours</p>
                 </div>
               </div>
             </div>
-          </a>
         </div>
-        <!-- End Card -->
-
-        <!-- Card -->
-        <div class="md:w-3/12 p-4">
-          <a href="booking">
-            <div class="bg-white rounded-xg shadow-xl">
-              <img src="{{ asset('images/bg-banner.jpeg') }}" alt="" class="rounded-t-lg" />
-              <div class="p-6">
-                <h2 class="font-bold mb-2 text-2xl text-slate-800">Nusa Penida Trip</h2>
-                <p class="text-slate-600 text-sm mb-4"><i class="fa-solid fa-location-dot"></i> Nusa Penida</p>
-                <p class="text-slate-600 mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, alias id reiciendis dolorem odit eveniet accusamus unde...</p>
-                <p class="text-slate-600 font-semibold my-4"><i class="fa-solid fa-star text-yellow-500"></i>4.5 <span class="font-normal">(10 Reviews)</span></p>
-                <hr / class=" border-slate-700 rounded-lg">
-                <div class="flex flex-row w-full justify-between mt-4">
-                  <p class="text-slate-600 my-2 text-md font-semibold"><span class="text-slate-500 text-sm font-light">From</span> Rp. 450.000</p>
-                  <p class="text-slate-600 my-2 text-md"><i class="fa-regular fa-clock"></i> 12-15 Hours</p>
-                </div>
-              </div>
-            </div>
+        @endforeach
           </a>
-        </div>
         <!-- End Card -->
-
-        <!-- Card -->
-        <div class="md:w-3/12 p-4">
-          <a href="product.html">
-            <div class="bg-white rounded-xg shadow-xl">
-              <img src="{{ asset('images/bg-banner.jpeg') }}" alt="" class="rounded-t-lg" />
-              <div class="p-6">
-                <h2 class="font-bold mb-2 text-2xl text-slate-800">Nusa Penida Trip</h2>
-                <p class="text-slate-600 text-sm mb-4"><i class="fa-solid fa-location-dot"></i> Nusa Penida</p>
-                <p class="text-slate-600 mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, alias id reiciendis dolorem odit eveniet accusamus unde...</p>
-                <p class="text-slate-600 font-semibold my-4"><i class="fa-solid fa-star text-yellow-500"></i>4.5 <span class="font-normal">(10 Reviews)</span></p>
-                <hr / class=" border-slate-700 rounded-lg">
-                <div class="flex flex-row w-full justify-between mt-4">
-                  <p class="text-slate-600 my-2 text-md font-semibold"><span class="text-slate-500 text-sm font-light">From</span> Rp. 450.000</p>
-                  <p class="text-slate-600 my-2 text-md"><i class="fa-regular fa-clock"></i> 12-15 Hours</p>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-        <!-- End Card -->
-
-        <!-- Card -->
-        <div class="md:w-3/12 p-4">
-          <a href="product.html">
-            <div class="bg-white rounded-xg shadow-xl">
-              <img src="{{ asset('images/bg-banner.jpeg') }}" alt="" class="rounded-t-lg" />
-              <div class="p-6">
-                <h2 class="font-bold mb-2 text-2xl text-slate-800">Nusa Penida Trip</h2>
-                <p class="text-slate-600 text-sm mb-4"><i class="fa-solid fa-location-dot"></i> Nusa Penida</p>
-                <p class="text-slate-600 mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, alias id reiciendis dolorem odit eveniet accusamus unde...</p>
-                <p class="text-slate-600 font-semibold my-4"><i class="fa-solid fa-star text-yellow-500"></i>4.5 <span class="font-normal">(10 Reviews)</span></p>
-                <hr / class=" border-slate-700 rounded-lg">
-                <div class="flex flex-row w-full justify-between mt-4">
-                  <p class="text-slate-600 my-2 text-md font-semibold"><span class="text-slate-500 text-sm font-light">From</span> Rp. 450.000</p>
-                  <p class="text-slate-600 my-2 text-md"><i class="fa-regular fa-clock"></i> 12-15 Hours</p>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-        <!-- End Card -->
-
       </div>
     </div>
   </div>
 
   <!-- component -->
   <!-- This is an example component -->
-  <div class="container mx-auto py-20">
+  <div class="container py-20 mx-auto">
     <!-- Title -->
-    <div class="text-center my-4">
+    <div class="my-4 text-center">
       <h1 class="text-3xl font-semibold text-center capitalize lg:text-4xl text-slate-700">Best destination</h1>
-      <p class="max-w-2xl mx-auto my-4 text-center text-slate-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo incidunt ex placeat modi magni quia error alias</p>
-      <hr class="w-2/12 mx-auto border-2 rounded-lg border-teal-500" />
+      <p class="max-w-2xl mx-auto my-4 text-center text-slate-600">
+        Here our best reccomendation place that you can enjoy without worrying about easy thing such as hotel, language, and anything. Dont be be overthinking because Guidy is there for you!
+      </p>
+      <hr class="w-2/12 mx-auto border-2 border-teal-500 rounded-lg" />
     </div>
     <!-- End Title -->
-    <div class="flex items-center flex-wrap">
+    <div class="flex flex-wrap items-center">
       @foreach ($destinations as $destination)
         <div class="p-2 md:w-4/12">
           <a href="#">
-            <div class="overflow-hidden aspect-video cursor-pointer rounded-xl relative group">
-              <div class="rounded-xl z-50 group-hover:opacity-100 transition duration-300 ease-in-out bg-black bg-opacity-50 absolute h-full inset-x-0 pt-30 text-white flex items-end">
+            <div class="relative overflow-hidden cursor-pointer aspect-video rounded-xl group">
+              <div class="absolute inset-x-0 z-50 flex items-end h-full text-white transition duration-300 ease-in-out bg-black bg-opacity-50 rounded-xl group-hover:opacity-100 pt-30">
                 <div class="flex">
-                  <div class="space-y-3 relative text-xl group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 pb-10 transform transition duration-300 ease-in-out">
+                  <div class="relative pb-10 space-y-3 text-xl transition duration-300 ease-in-out transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0">
                     <div class="font-bold text-center">{{ $destination->dest_name }}</div>
-                    <div class="opacity-60 text-sm text-center w-3/4 mx-auto">{{ $destination->dest_description }}</div>
+                    <div class="w-3/4 mx-auto text-sm text-center opacity-60">{{ $destination->dest_description }}</div>
                   </div>
                 </div>
               </div>
-              <img alt="" class="object-cover w-full aspect-square group-hover:scale-110 transition duration-300 ease-in-out bg-black bg-opacity-50" src="{{ asset('images/destinations/' . $destination->dest_image) }}" />
+              <img alt="" class="object-cover w-full transition duration-300 ease-in-out bg-black bg-opacity-50 aspect-square group-hover:scale-110" src="{{ asset('images/destinations/' . $destination->dest_image) }}" />
             </div>
           </a>
         </div>
       @endforeach
       {{-- <div class="p-2 md:w-4/12">
         <a href="#">
-          <div class="overflow-hidden aspect-video cursor-pointer rounded-xl relative group">
-            <div class="rounded-xl z-50 group-hover:opacity-100 transition duration-300 ease-in-out bg-black bg-opacity-50 absolute h-full inset-x-0 pt-30 text-white flex items-end">
+          <div class="relative overflow-hidden cursor-pointer aspect-video rounded-xl group">
+            <div class="absolute inset-x-0 z-50 flex items-end h-full text-white transition duration-300 ease-in-out bg-black bg-opacity-50 rounded-xl group-hover:opacity-100 pt-30">
               <div class="flex">
-                <div class="space-y-3 relative text-xl group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 pb-10 transform transition duration-300 ease-in-out">
+                <div class="relative pb-10 space-y-3 text-xl transition duration-300 ease-in-out transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0">
                   <div class="font-bold text-center">Nusa Penida</div>
-                  <div class="opacity-60 text-sm text-center w-3/4 mx-auto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio dolores error iure, perferendis sequi totam. Ad aliquam aperiam atque deleniti dolor dolorem enim esse et in, inventore itaque, pariatur reprehenderit.</div>
+                  <div class="w-3/4 mx-auto text-sm text-center opacity-60">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio dolores error iure, perferendis sequi totam. Ad aliquam aperiam atque deleniti dolor dolorem enim esse et in, inventore itaque, pariatur reprehenderit.</div>
                 </div>
               </div>
             </div>
-            <img alt="" class="object-cover w-full aspect-square group-hover:scale-110 transition duration-300 ease-in-out bg-black bg-opacity-50" src="{{ asset('images/bg-banner.jpeg') }}" />
+            <img alt="" class="object-cover w-full transition duration-300 ease-in-out bg-black bg-opacity-50 aspect-square group-hover:scale-110" src="{{ asset('images/bg-banner.jpeg') }}" />
           </div>
         </a>
       </div>
       <div class="p-2 md:w-4/12">
         <a href="#">
-          <div class="overflow-hidden aspect-video cursor-pointer rounded-xl relative group">
-            <div class="rounded-xl z-50 group-hover:opacity-100 transition duration-300 ease-in-out bg-black bg-opacity-50 absolute h-full inset-x-0 pt-30 text-white flex items-end">
+          <div class="relative overflow-hidden cursor-pointer aspect-video rounded-xl group">
+            <div class="absolute inset-x-0 z-50 flex items-end h-full text-white transition duration-300 ease-in-out bg-black bg-opacity-50 rounded-xl group-hover:opacity-100 pt-30">
               <div class="flex">
-                <div class="space-y-3 relative text-xl group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 pb-10 transform transition duration-300 ease-in-out">
+                <div class="relative pb-10 space-y-3 text-xl transition duration-300 ease-in-out transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0">
                   <div class="font-bold text-center">Nusa Penida</div>
-                  <div class="opacity-60 text-sm text-center w-3/4 mx-auto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio dolores error iure, perferendis sequi totam. Ad aliquam aperiam atque deleniti dolor dolorem enim esse et in, inventore itaque, pariatur reprehenderit.</div>
+                  <div class="w-3/4 mx-auto text-sm text-center opacity-60">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio dolores error iure, perferendis sequi totam. Ad aliquam aperiam atque deleniti dolor dolorem enim esse et in, inventore itaque, pariatur reprehenderit.</div>
                 </div>
               </div>
             </div>
-            <img alt="" class="object-cover w-full aspect-square group-hover:scale-110 transition duration-300 ease-in-out bg-black bg-opacity-50" src="{{ asset('images/bg-banner.jpeg') }}" />
+            <img alt="" class="object-cover w-full transition duration-300 ease-in-out bg-black bg-opacity-50 aspect-square group-hover:scale-110" src="{{ asset('images/bg-banner.jpeg') }}" />
           </div>
         </a>
       </div>
       <div class="p-2 md:w-4/12">
         <a href="#">
-          <div class="overflow-hidden aspect-video cursor-pointer rounded-xl relative group">
-            <div class="rounded-xl z-50 group-hover:opacity-100 transition duration-300 ease-in-out bg-black bg-opacity-50 absolute h-full inset-x-0 pt-30 text-white flex items-end">
+          <div class="relative overflow-hidden cursor-pointer aspect-video rounded-xl group">
+            <div class="absolute inset-x-0 z-50 flex items-end h-full text-white transition duration-300 ease-in-out bg-black bg-opacity-50 rounded-xl group-hover:opacity-100 pt-30">
               <div class="flex">
-                <div class="space-y-3 relative text-xl group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 pb-10 transform transition duration-300 ease-in-out">
+                <div class="relative pb-10 space-y-3 text-xl transition duration-300 ease-in-out transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0">
                   <div class="font-bold text-center">Nusa Penida</div>
-                  <div class="opacity-60 text-sm text-center w-3/4 mx-auto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio dolores error iure, perferendis sequi totam. Ad aliquam aperiam atque deleniti dolor dolorem enim esse et in, inventore itaque, pariatur reprehenderit.</div>
+                  <div class="w-3/4 mx-auto text-sm text-center opacity-60">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio dolores error iure, perferendis sequi totam. Ad aliquam aperiam atque deleniti dolor dolorem enim esse et in, inventore itaque, pariatur reprehenderit.</div>
                 </div>
               </div>
             </div>
-            <img alt="" class="object-cover w-full aspect-square group-hover:scale-110 transition duration-300 ease-in-out bg-black bg-opacity-50" src="{{ asset('images/bg-banner.jpeg') }}" />
+            <img alt="" class="object-cover w-full transition duration-300 ease-in-out bg-black bg-opacity-50 aspect-square group-hover:scale-110" src="{{ asset('images/bg-banner.jpeg') }}" />
           </div>
         </a>
       </div>
       <div class="p-2 md:w-4/12">
         <a href="#">
-          <div class="overflow-hidden aspect-video cursor-pointer rounded-xl relative group">
-            <div class="rounded-xl z-50 group-hover:opacity-100 transition duration-300 ease-in-out bg-black bg-opacity-50 absolute h-full inset-x-0 pt-30 text-white flex items-end">
+          <div class="relative overflow-hidden cursor-pointer aspect-video rounded-xl group">
+            <div class="absolute inset-x-0 z-50 flex items-end h-full text-white transition duration-300 ease-in-out bg-black bg-opacity-50 rounded-xl group-hover:opacity-100 pt-30">
               <div class="flex">
-                <div class="space-y-3 relative text-xl group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 pb-10 transform transition duration-300 ease-in-out">
+                <div class="relative pb-10 space-y-3 text-xl transition duration-300 ease-in-out transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0">
                   <div class="font-bold text-center">Nusa Penida</div>
-                  <div class="opacity-60 text-sm text-center w-3/4 mx-auto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio dolores error iure, perferendis sequi totam. Ad aliquam aperiam atque deleniti dolor dolorem enim esse et in, inventore itaque, pariatur reprehenderit.</div>
+                  <div class="w-3/4 mx-auto text-sm text-center opacity-60">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio dolores error iure, perferendis sequi totam. Ad aliquam aperiam atque deleniti dolor dolorem enim esse et in, inventore itaque, pariatur reprehenderit.</div>
                 </div>
               </div>
             </div>
-            <img alt="" class="object-cover w-full aspect-square group-hover:scale-110 transition duration-300 ease-in-out bg-black bg-opacity-50" src="{{ asset('images/bg-banner.jpeg') }}" />
+            <img alt="" class="object-cover w-full transition duration-300 ease-in-out bg-black bg-opacity-50 aspect-square group-hover:scale-110" src="{{ asset('images/bg-banner.jpeg') }}" />
           </div>
         </a>
       </div>
       <div class="p-2 md:w-4/12">
         <a href="#">
-          <div class="overflow-hidden aspect-video cursor-pointer rounded-xl relative group">
-            <div class="rounded-xl z-50 group-hover:opacity-100 transition duration-300 ease-in-out bg-black bg-opacity-50 absolute h-full inset-x-0 pt-30 text-white flex items-end">
+          <div class="relative overflow-hidden cursor-pointer aspect-video rounded-xl group">
+            <div class="absolute inset-x-0 z-50 flex items-end h-full text-white transition duration-300 ease-in-out bg-black bg-opacity-50 rounded-xl group-hover:opacity-100 pt-30">
               <div class="flex">
-                <div class="space-y-3 relative text-xl group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 pb-10 transform transition duration-300 ease-in-out">
+                <div class="relative pb-10 space-y-3 text-xl transition duration-300 ease-in-out transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0">
                   <div class="font-bold text-center">Nusa Penida</div>
-                  <div class="opacity-60 text-sm text-center w-3/4 mx-auto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio dolores error iure, perferendis sequi totam. Ad aliquam aperiam atque deleniti dolor dolorem enim esse et in, inventore itaque, pariatur reprehenderit.</div>
+                  <div class="w-3/4 mx-auto text-sm text-center opacity-60">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio dolores error iure, perferendis sequi totam. Ad aliquam aperiam atque deleniti dolor dolorem enim esse et in, inventore itaque, pariatur reprehenderit.</div>
                 </div>
               </div>
             </div>
-            <img alt="" class="object-cover w-full aspect-square group-hover:scale-110 transition duration-300 ease-in-out bg-black bg-opacity-50" src="{{ asset('images/bg-banner.jpeg') }}" />
+            <img alt="" class="object-cover w-full transition duration-300 ease-in-out bg-black bg-opacity-50 aspect-square group-hover:scale-110" src="{{ asset('images/bg-banner.jpeg') }}" />
           </div>
         </a>
       </div> --}}
@@ -266,7 +206,7 @@
   <div class="container px-6 py-20 mx-auto">
     <h1 class="text-3xl font-semibold text-center capitalize lg:text-4xl text-slate-700">Top 3 Best Guide</h1>
     <p class="max-w-2xl mx-auto my-4 text-center text-slate-600">Guidy make sure that all costumers have a excellent holiday with our best guide</p>
-    <hr class="w-2/12 mx-auto border-2 rounded-lg border-teal-500" />
+    <hr class="w-2/12 mx-auto border-2 border-teal-500 rounded-lg" />
 
     <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-3">
       @php
@@ -280,8 +220,8 @@
         @endif
         <div class="flex flex-col items-center">
           <img class="object-cover w-full rounded-xl aspect-square" src="{{ asset('/images/tour_guides/' . $tour_guide->tg_image) }}" alt="" />
-          <h1 class="mt-4 text-2xl font-semibold text-slate-600 capitalize">{{ $tour_guide->tg_name }}</h1>
-          <p class="mt-2 text-slate-500 capitalize">design director</p>
+          <h1 class="mt-4 text-2xl font-semibold capitalize text-slate-600">{{ $tour_guide->tg_name }}</h1>
+          <p class="mt-2 capitalize text-slate-500">design director</p>
         </div>
         @php
           $i++;
@@ -289,13 +229,13 @@
       @endforeach
       {{-- <div class="flex flex-col items-center">
 					<img class="object-cover w-full rounded-xl aspect-square" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="" />
-					<h1 class="mt-4 text-2xl font-semibold text-slate-600 capitalize">arthur melo</h1>
-					<p class="mt-2 text-slate-500 capitalize">design director</p>
+					<h1 class="mt-4 text-2xl font-semibold capitalize text-slate-600">arthur melo</h1>
+					<p class="mt-2 capitalize text-slate-500">design director</p>
 				</div>
 				<div class="flex flex-col items-center">
 					<img class="object-cover w-full rounded-xl aspect-square" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="" />
-					<h1 class="mt-4 text-2xl font-semibold text-slate-600 capitalize">arthur melo</h1>
-					<p class="mt-2 text-slate-500 capitalize">design director</p>
+					<h1 class="mt-4 text-2xl font-semibold capitalize text-slate-600">arthur melo</h1>
+					<p class="mt-2 capitalize text-slate-500">design director</p>
 				</div> --}}
     </div>
   </div>
@@ -304,13 +244,13 @@
 
   <!-- Footer -->
   <div class="h-full bg-gray-200">
-    <div class="container mx-auto flex flex-row flex-wrap">
-      <div class="md:w-3/12 h-full p-8 text-center sm:text-left">
-        <h4 class="text-dark text-lg md:my-6 my-4 font-semibold">About Us</h4>
-        <p class="text-slate-600 md:mb-7 text-base">Sed ut perspiciatis undmnis is iste natus error sit amet voluptatem totam rem aperiam.</p>
+    <div class="container flex flex-row flex-wrap mx-auto">
+      <div class="h-full p-8 text-center md:w-3/12 sm:text-left">
+        <h4 class="my-4 text-lg font-semibold text-dark md:my-6">About Us</h4>
+        <p class="text-base text-slate-600 md:mb-7">Sed ut perspiciatis undmnis is iste natus error sit amet voluptatem totam rem aperiam.</p>
       </div>
-      <div class="md:w-3/12 w-6/12 h-full md:p-8 p-4">
-        <h4 class="text-dark text-lg md:my-6 font-semibold">Helpful Link</h4>
+      <div class="w-6/12 h-full p-4 md:w-3/12 md:p-8">
+        <h4 class="text-lg font-semibold text-dark md:my-6">Helpful Link</h4>
 
         <ul>
           <li class="mb-1"><a href="#">Best Recommend</a></li>
@@ -319,8 +259,8 @@
           <li class="mb-1"><a href="#">Destination</a></li>
         </ul>
       </div>
-      <div class="md:w-3/12 w-6/12 h-full md:p-8 p-4">
-        <h4 class="text-dark text-lg md:my-6 font-semibold">Helpful Link</h4>
+      <div class="w-6/12 h-full p-4 md:w-3/12 md:p-8">
+        <h4 class="text-lg font-semibold text-dark md:my-6">Helpful Link</h4>
 
         <ul>
           <li class="mb-1"><a href="#">Best Recommend</a></li>
@@ -329,9 +269,9 @@
           <li class="mb-1"><a href="#">Destination</a></li>
         </ul>
       </div>
-      <div class="md:w-3/12 w-full h-full p-8">
-        <h4 class="text-dark text-lg md:my-6 font-semibold text-center md:text-left">Social Media</h4>
-        <div class="space-x-3 text-md mx-auto text-center md:text-left">
+      <div class="w-full h-full p-8 md:w-3/12">
+        <h4 class="text-lg font-semibold text-center text-dark md:my-6 md:text-left">Social Media</h4>
+        <div class="mx-auto space-x-3 text-center text-md md:text-left">
           <a href="#" class="text-2xl"><i class="fa-brands fa-facebook"></i> </a>
           <a href="#" class="text-2xl"><i class="fa-brands fa-twitter"></i> </a>
           <a href="#" class="text-2xl"><i class="fa-solid fa-envelope"></i> </a>
