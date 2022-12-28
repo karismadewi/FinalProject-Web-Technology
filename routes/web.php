@@ -27,6 +27,7 @@ Route::get('/dashboard', function () {
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/booking', [HomeController::class, 'booking'])->name('booking')->middleware(['auth','verified','checkRole:admin,user']);
 Route::get('/history', [HomeController::class, 'history'])->name('history')->middleware(['auth','verified','checkRole:admin,user']);
+Route::get('/review', [HomeController::class, 'review'])->name('review')->middleware(['auth','verified','checkRole:admin,user']);
 
 Route::get('/tour_guide', [AdminController::class, 'index'])->name('index')->middleware('auth','verified','checkRole:admin');
 Route::get('/create', [AdminController::class, 'create'])->name('create')->middleware('auth','verified','checkRole:admin');

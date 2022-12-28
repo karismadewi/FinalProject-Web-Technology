@@ -15,4 +15,7 @@ class HomeController extends Controller
     public function history() {
         return view('frontpage.history');
     }
+    public function review() {
+        return view('frontpage.review');
+    }
 }

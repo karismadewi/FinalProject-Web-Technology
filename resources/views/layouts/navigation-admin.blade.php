@@ -1,6 +1,6 @@
-<aside class="w-64 mr-5 bg-blue-500 text-white py-4 px-3 rounded h-screen" aria-label="Sidebar">
+<aside class="w-64 h-screen px-3 py-4 mr-5 text-white bg-blue-500 rounded" aria-label="Sidebar">
     <div class="">
-        <h3 class="font-bold text-2xl mb-5 text-center">Admin</h3>
+        <h3 class="mb-5 text-2xl font-bold text-center">Admin</h3>
         <ul class="space-y-2">
             <li>
                 <a href="#" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
@@ -15,5 +15,7 @@
                 </a>
             </li>
         </ul>
-    </div>
+    </div>  
 </aside>
+
+

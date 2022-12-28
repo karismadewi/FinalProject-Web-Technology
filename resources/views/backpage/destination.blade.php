@@ -17,11 +17,20 @@
                 <span class="ml-3 text-white">Destinations</span>
               </a>
             </li>
+            <li><form method="POST" action="{{ route('logout') }}"class="flex items-center p-2 text-base font-normal rounded-lg fa-solid fa-table-columns">
+                @csrf
+                <x-dropdown-link :href="route('logout')"
+                        onclick="event.preventDefault();
+                                    this.closest('form').submit();" class="text-white hover:bg-teal-300">
+                    {{ __('Log Out') }}
+                </x-dropdown-link>
+            </form>
+        </li>
           </ul>
         </div>
       </aside>
       {{-- end sidebar --}}
-  
+
       {{-- table --}}
       <div class="overflow-x-auto relative w-full">
         <h1 class="font-bold text-3xl my-10">List Destination of Guidy 2022</h1>
@@ -58,4 +67,3 @@
       {{-- end table --}}
     </div>
   </x-admin-layout>
-  
